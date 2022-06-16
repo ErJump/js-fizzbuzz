@@ -11,8 +11,13 @@
 <body>
     <main class="bg-dark">
         <div class="container p-5">
-            <h1 class="text-center text-white mb-4">FizzBuzz</h1>
-            <div class="row" id="row-container"></div>
+            <h1 class="text-center text-white m-4">FizzBuzz</h1>
+            <div class="w-100 d-flex justify-content-around mb-5">
+                <label for="input-number" class="form-label text-white text-center">Inserisci un numero (possibilmente positivo) e premi inizia</label>
+                <input type="number" class="form-control border-primary " id="input-number">
+                <button type="submit" class="btn btn-primary d-inline" id="start-button">Inizia</button>
+            </div>
+            <div class="row d-none" id="row-container"></div>
         </div>
     </main>
 <script src="js/main.js"></script>
