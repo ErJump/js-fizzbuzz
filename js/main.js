@@ -3,6 +3,8 @@ let rowContainer = document.getElementById('row-container');
 //dichiaro il bottone tramite id
 const button = document.getElementById("start-button");
 button.addEventListener('click', function(){
+    //reset per ogni click che viene effettuato
+    document.getElementById('row-container').innerHTML='';
     //dichiaro la variabile basata sul valore dell'input
     let userInput = parseInt(document.getElementById('input-number').value); 
     //rimuovo la classe d-none per visualizzare il div container
@@ -14,8 +16,14 @@ button.addEventListener('click', function(){
         newDiv.classList.add('col-3' , 'text-center', 'p-2' , 'rounded-5', 'mb-2');
         //dico di aggiungere newDiv
         rowContainer.append(newDiv);
+        //se i è 0 allora il div non deve comparire a schermo
+        if (i == 0) {
+            //div contenuto vuoto
+            newDiv.innerHTML = "";
+            //rimuovo le classi così che non viene visualizzato il div
+            newDiv.classList.remove('col-3' , 'text-center', 'p-2' , 'rounded-5', 'mb-2');
         //metto la condizione che se un numero è divisibile per 15 (primo numero divisibile sia per 3 che per 5) allora il div si riempie con "FizzBuzz" 
-        if (i % 15 == 0){
+        } else if (i % 15 == 0){
             newDiv.innerHTML = "FizzBuzz";
             //faccio cambiare il colore aggiungendo classi
             newDiv.classList.add('bg-danger' , 'text-white');
@@ -29,8 +37,8 @@ button.addEventListener('click', function(){
             newDiv.innerHTML = "Buzz";
             //faccio cambiare il colore aggiungendo classi
             newDiv.classList.add('bg-success' , 'text-white');
-        //altrimenti il div si riempie con il numero
-        } else {
+        //altrimenti il div ha come contenuto il valore di i
+        }  else {
             newDiv.innerHTML = i;
             newDiv.classList.add('bg-white'); 
         }
