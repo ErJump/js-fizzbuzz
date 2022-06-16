@@ -5,8 +5,8 @@ const button = document.getElementById("start-button");
 button.addEventListener('click', function(){
     //reset per ogni click che viene effettuato
     document.getElementById('row-container').innerHTML='';
-    //dichiaro la variabile basata sul valore dell'input
-    let userInput = parseInt(document.getElementById('input-number').value); 
+    //dichiaro la variabile basata sul valore dell'input e lo rendo positivo.
+    let userInput = Math.abs(parseInt(document.getElementById('input-number').value));
     //rimuovo la classe d-none per visualizzare il div container
     rowContainer.classList.remove('d-none');
     //scrivo un ciclo for che inizia dal valore dell'input utente e arriva a 100 numeri dopo, incrementando il valore di 1 per ciclo.
